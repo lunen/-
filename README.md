@@ -41,12 +41,28 @@ public class Game2048 extends JPanel {  //Game2048 클래스 에 JPanel 상속
   private static final int TILE_SIZE = 64;          // 타이틀 사이즈를 64로 지정
   private static final int TILES_MARGIN = 16;       // 타이틀 여백을 16으로 지정
 
+<<<<<<< HEAD
   private Tile[] myTiles;   //  myTiles 일차원배열Tile 선언
   boolean myWin = false;    //  참과 거짓의 값을 가지는 논리데이터형으로 myWin(이김) 지정 거짓의 값가짐
   boolean myLose = false;   //  참과 거짓의 값을 가지는 논리데이터형으로 myLose(짐) 지정 거짓의 값가짐
   int myScore = 0;          //  myScore(내 점수)는 정수형을 가지며 0의 값 가짐
 
   public Game2048() {       //Game2048메소드 선언
+=======
+<<<<<<< HEAD
+  private Tile[] myTiles;   //myTiles 일차원배열Tile 선언
+  boolean myWin = false;    //참과 거짓의 값을 가지는 논리데이터형으로 myWin(이김) 지정 거짓의 값가짐
+  boolean myLose = false;   //참과 거짓의 값을 가지는 논리데이터형으로 myLose(짐) 지정 거짓의 값가짐
+  int myScore = 0;          //myScore(내 점수)는 정수형을 가지며 0의 값 가짐
+=======
+  private Tile[] myTiles;
+  boolean myWin = false;
+  boolean myLose = false;
+  int myScore = 0;
+>>>>>>> 1bd38bcb1db02871877620075fcb46b8fcee8017
+
+  public Game2048() {
+>>>>>>> 9e46d67f1bd0c47e6c8303a51548a117582549cf
     setPreferredSize(new Dimension(340, 400));
     //윈도우창 크기를 정하는 메소드
     //이 메소드는 Dimension 타입의 파라미터만 받기때문에 Dimension객체를 만들어서 넘겨줘야함
