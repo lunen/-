@@ -14,6 +14,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+//아파치 라이센스 2.0
+
 
 package com.bulenkov.game2048;  //패키지
 
@@ -30,15 +32,19 @@ import java.util.List;            //List 인터페이스가 구현되어 있으�
  * @author Konstantin Bulenkov  // annotation으로 저자명시
  */
 public class Game2048 extends JPanel {  //Game2048 클래스 에 JPanel 상속
-  private static final Color BG_COLOR = new Color(0xbbada0);  //
-  private static final String FONT_NAME = "Arial";
-  private static final int TILE_SIZE = 64;
-  private static final int TILES_MARGIN = 16;
+  private static final Color BG_COLOR = new Color(0xbbada0);
+  //같은 클래스에서만 접근 가능하게 Private 씀
+  //해당 클래스를 쓸 때 계속 일관된 값으로 쓸 것을 멤버 상수로 지정
+  //색의 정보를 지정
 
-  private Tile[] myTiles;
-  boolean myWin = false;
-  boolean myLose = false;
-  int myScore = 0;
+  private static final String FONT_NAME = "Arial";  //폰트이름: Arial
+  private static final int TILE_SIZE = 64;          // 타이틀 사이즈를 64로 지정
+  private static final int TILES_MARGIN = 16;       // 타이틀 여백을 16으로 지정
+
+  private Tile[] myTiles;   //myTiles 일차원배열Tile 선언
+  boolean myWin = false;    //참과 거짓의 값을 가지는 논리데이터형으로 myWin(이김) 지정 거짓의 값가짐
+  boolean myLose = false;   //참과 거짓의 값을 가지는 논리데이터형으로 myLose(짐) 지정 거짓의 값가짐
+  int myScore = 0;          //myScore(내 점수)는 정수형을 가지며 0의 값 가짐
 
   public Game2048() {
     setPreferredSize(new Dimension(340, 400));
