@@ -17,10 +17,10 @@
 
 package com.bulenkov.game2048;  //패키지
 
-import javax.swing.*;
-import java.awt.*;
-import java.awt.event.KeyAdapter;
-import java.awt.event.KeyEvent;
+import javax.swing.*; //자바 GUI만들기 위한 (JPanel)컴포넌트 포함
+import java.awt.*;  //자바 GUI만들기 위한 (Panel)컴포넌트 포함
+import java.awt.event.KeyAdapter; //키 입력받기 위한 컴포넌트 포함
+import java.awt.event.KeyEvent; //키 이벤트를 위한 컴포넌트 포함
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
