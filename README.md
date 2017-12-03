@@ -41,14 +41,17 @@ public class Game2048 extends JPanel {  //Game2048 클래스 에 JPanel 상속
   private static final int TILE_SIZE = 64;          // 타이틀 사이즈를 64로 지정
   private static final int TILES_MARGIN = 16;       // 타이틀 여백을 16으로 지정
 
-  private Tile[] myTiles;   //myTiles 일차원배열Tile 선언
-  boolean myWin = false;    //참과 거짓의 값을 가지는 논리데이터형으로 myWin(이김) 지정 거짓의 값가짐
-  boolean myLose = false;   //참과 거짓의 값을 가지는 논리데이터형으로 myLose(짐) 지정 거짓의 값가짐
-  int myScore = 0;          //myScore(내 점수)는 정수형을 가지며 0의 값 가짐
+  private Tile[] myTiles;   //  myTiles 일차원배열Tile 선언
+  boolean myWin = false;    //  참과 거짓의 값을 가지는 논리데이터형으로 myWin(이김) 지정 거짓의 값가짐
+  boolean myLose = false;   //  참과 거짓의 값을 가지는 논리데이터형으로 myLose(짐) 지정 거짓의 값가짐
+  int myScore = 0;          //  myScore(내 점수)는 정수형을 가지며 0의 값 가짐
 
-  public Game2048() {
+  public Game2048() {       //Game2048메소드 선언
     setPreferredSize(new Dimension(340, 400));
-    setFocusable(true);
+    //윈도우창 크기를 정하는 메소드
+    //이 메소드는 Dimension 타입의 파라미터만 받기때문에 Dimension객체를 만들어서 넘겨줘야함
+    //Dimension객체 폭 340, 높이 400 으로 지정 생성
+    setFocusable(true); //포커스를 받을 수 있는 상태로 지정
     addKeyListener(new KeyAdapter() {
       @Override
       public void keyPressed(KeyEvent e) {
