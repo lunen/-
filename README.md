@@ -17,19 +17,20 @@
 
 package com.bulenkov.game2048;  //패키지
 
-import javax.swing.*; //자바 GUI만들기 위한 (JPanel)컴포넌트 포함
-import java.awt.*;  //자바 GUI만들기 위한 (Panel)컴포넌트 포함
+import javax.swing.*;             //자바 GUI만들기 위한 (JPanel)컴포넌트 포함
+import java.awt.*;                //자바 GUI만들기 위한 (Panel)컴포넌트 포함
 import java.awt.event.KeyAdapter; //키 입력받기 위한 컴포넌트 포함
-import java.awt.event.KeyEvent; //키 이벤트를 위한 컴포넌트 포함
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
+import java.awt.event.KeyEvent;   //키 이벤트를 위한 컴포넌트 포함
+import java.util.ArrayList;       //list 인터페이스의 크기가 변경가능한 배열을 구현한 클래스 포함
+                                  //배열의 사이즈를 조작하는 메소드를 제공
+import java.util.LinkedList;      //데이터를 1차원으로 늘여놓은 형태를 가지며 스택과 큐를 구현가능
+import java.util.List;            //List 인터페이스가 구현되어 있으며 각 요소의 삽입 위치 등을 정밀하게 제어 가능
 
 /**
- * @author Konstantin Bulenkov
+ * @author Konstantin Bulenkov  // annotation으로 저자명시
  */
-public class Game2048 extends JPanel {
-  private static final Color BG_COLOR = new Color(0xbbada0);
+public class Game2048 extends JPanel {  //Game2048 클래스 에 JPanel 상속
+  private static final Color BG_COLOR = new Color(0xbbada0);  //
   private static final String FONT_NAME = "Arial";
   private static final int TILE_SIZE = 64;
   private static final int TILES_MARGIN = 16;
