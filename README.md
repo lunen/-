@@ -249,26 +249,29 @@ public class Game2048 extends JPanel {  //Game2048 클래스 에 JPanel 상속
     }
   }
 
-  private Tile[] mergeLine(Tile[] oldLine) {
-    LinkedList<Tile> list = new LinkedList<Tile>();
+  private Tile[] mergeLine(Tile[] oldLine) {    
+    //Tile일차원배열  mergeLine()
+    LinkedList<Tile> list = new LinkedList<Tile>(); //연결리스트 Tile 리스트를 새 타일 연결리스트로 초기화
     for (int i = 0; i < 4 && !oldLine[i].isEmpty(); i++) {
-      int num = oldLine[i].value;
+      //oldLine( 1줄부터~5줄미만까지에서 )줄이 비어있다면  1줄씩 증가
+      int num = oldLine[i].value; //정수형 num값을 oldLine i줄의 값으로 초기화
       if (i < 3 && oldLine[i].value == oldLine[i + 1].value) {
-        num *= 2;
-        myScore += num;
-        int ourTarget = 2048;
-        if (num == ourTarget) {
-          myWin = true;
+        //만약 i가 3미만이며 oldLine i줄의 값이 oldLine i+1 줄의 값과 같을때
+        num *= 2; //num값을 *2
+        myScore += num; //나의 점수는 num값을 더함
+        int ourTarget = 2048; // 정수형 ourTarget은 2048
+        if (num == ourTarget) { //num값이 ourTarget과 같다면
+          myWin = true; //myWin은 true로 초기화
         }
-        i++;
+        i++;  //i증가
       }
-      list.add(new Tile(num));
+      list.add(new Tile(num));  //list에 새로운 Tile(num)추가
     }
-    if (list.size() == 0) {
-      return oldLine;
-    } else {
-      ensureSize(list, 4);
-      return list.toArray(new Tile[4]);
+    if (list.size() == 0) { //만약 list 사이즈가 0이라면
+      return oldLine; //oldLine을 되돌림
+    } else {  //아니라면
+      ensureSize(list, 4);  //영역크기 list 4
+      return list.toArray(new Tile[4]); //new Tile[4] 리스트를 배열로 리턴
     }
   }
 
