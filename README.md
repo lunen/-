@@ -276,24 +276,27 @@ public class Game2048 extends JPanel {  //Game2048 클래스 에 JPanel 상속
   }
 
   private static void ensureSize(java.util.List<Tile> l, int s) {
+    //타일 리스트 영역크기 함수
     while (l.size() != s) {
-      l.add(new Tile());
+      //L.size() 가 s가 아닐동안
+      l.add(new Tile());  //L에 new Tile() 추가
     }
   }
 
   private Tile[] getLine(int index) {
-    Tile[] result = new Tile[4];
-    for (int i = 0; i < 4; i++) {
-      result[i] = tileAt(i, index);
+    // 정수형 인덱스 문자열 받음
+    Tile[] result = new Tile[4];  //Tile배열 결과는 new Tile[4]배열
+    for (int i = 0; i < 4; i++) { //i가 0부터 4미만일동안 i 1씩증가
+      result[i] = tileAt(i, index); // 결과[i]배열은 tileAt(i, index)
     }
-    return result;
+    return result;  //결과 반환
   }
 
-  private void setLine(int index, Tile[] re) {
-    System.arraycopy(re, 0, myTiles, index * 4, 4);
+  private void setLine(int index, Tile[] re) {  
+    System.arraycopy(re, 0, myTiles, index * 4, 4); //배열복사
   }
 
-  @Override
+  @Override //오버라이드
   public void paint(Graphics g) {
     super.paint(g);
     g.setColor(BG_COLOR);
